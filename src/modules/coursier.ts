@@ -32,7 +32,7 @@ export async function install(): Promise<void> {
 
     await exec.exec(
       'cs',
-      ['install', 'scalafmt', 'scalafix', 'scala-cli', 'sbt', '--install-dir', binary],
+      ['install', 'scalafmt', 'scalafix', 'scala-cli', 'sbt:1.10.7', '--install-dir', binary],
       {
         silent: true,
         listeners: {stdline: core.debug, errline: core.debug},
@@ -81,6 +81,8 @@ export async function launch(
     '--contrib',
     '-r',
     'sonatype:snapshots',
+    '-r',
+    'https://clearscoredev.jfrog.io/artifactory/sbt-release',
     app,
     ...(extraJars ? ['--extra-jars', extraJars.value] : []),
     '--',

@@ -48,7 +48,7 @@ async function run(): Promise<void> {
     }
 
     const app = inputs.steward.version
-      ? `org.scala-steward:scala-steward-core_2.13:${inputs.steward.version.value}`
+      ? 'org.scala-steward:scala-steward-core_2.13:0.32.1-176-12e9ce93-20250312-1800-SNAPSHOT'
       : 'scala-steward'
 
     try {
